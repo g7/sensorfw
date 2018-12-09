@@ -414,7 +414,7 @@ void IioAdaptor::processSample(int fileId, int fd)
             case IioAdaptor::IIO_ACCELEROMETER:
             case IioAdaptor::IIO_GYROSCOPE:
                 timedData = iioXyzBuffer_->nextSlot();
-                timedData->x_= -(result + iioDevice.offset) * iioDevice.scale * 1000 * REV_GRAVITY;
+                timedData->x_= -(result + iioDevice.offset) * iioDevice.scale * REV_GRAVITY;
                 break;
             case IioAdaptor::IIO_MAGNETOMETER:
                 calData = magnetometerBuffer_->nextSlot();
@@ -435,7 +435,7 @@ void IioAdaptor::processSample(int fileId, int fd)
             case IioAdaptor::IIO_ACCELEROMETER:
             case IioAdaptor::IIO_GYROSCOPE:
                 timedData = iioXyzBuffer_->nextSlot();
-                timedData->y_= -(result + iioDevice.offset) * iioDevice.scale * 1000 * REV_GRAVITY;
+                timedData->y_= -(result + iioDevice.offset) * iioDevice.scale * REV_GRAVITY;
                 break;
             case IioAdaptor::IIO_MAGNETOMETER:
                 calData = magnetometerBuffer_->nextSlot();
@@ -453,7 +453,7 @@ void IioAdaptor::processSample(int fileId, int fd)
             case IioAdaptor::IIO_ACCELEROMETER:
             case IioAdaptor::IIO_GYROSCOPE:
                 timedData = iioXyzBuffer_->nextSlot();
-                timedData->z_ = -(result + iioDevice.offset) * iioDevice.scale * 1000 * REV_GRAVITY;
+                timedData->z_ = -(result + iioDevice.offset) * iioDevice.scale * REV_GRAVITY;
                 break;
             case IioAdaptor::IIO_MAGNETOMETER:
                 calData = magnetometerBuffer_->nextSlot();
